@@ -1,32 +1,140 @@
+#root { height: calc(100% - 8rem); }
+
 .App {
-  text-align: center;
+  display: block;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.wrapper {
+  height: 100%;
+  overflow: hidden;
+  padding: 4rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+	margin: 1rem;
+	height: calc(100% - 2rem);
+}
+
+.container > .inner {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  max-width: 134rem;
+  position: relative;
+}
+
+.container > .inner > .col.left {
+  /* 
+    line below should be `67rem` - idk why it's 
+    not working tho... this seems to fix it however :P
+  */
+  max-width: 47rem;
+  padding: 6rem 10rem;
+  position: relative;
+  flex: 1;
+
+  background: #F1F4F7;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.container > .inner > .col.right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 72rem;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIG9wYWNpdHk9Ii4yIj48cGF0aCBzdHJva2U9IiMxNjE2MTYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTE1LjggNTMuNDVsLTQuNjUuNzVMOSA1MC4wNWwzLjMtMy4zIDQuMTUgMi4xNXptMzctMzguNWwtNC42NS43NUw0NiAxMS41NWwzLjMtMy4zIDQuMTUgMi4xNXpNNzcuMyAzNi4ybC0zLjgtMi43NUw3NC45NSAyOWg0LjdsMS40NSA0LjQ1em0tMzIgMzUuMjVsLTQuNjUuNzUtMi4xNS00LjE1IDMuMy0zLjMgNC4xNSAyLjE1ek02MS41IDQ1LjdjMS4yNSAwIDIuMjUgMSAyLjI1IDIuMjVzLTEgMi4yNS0yLjI1IDIuMjUtMi4yNS0xLTIuMjUtMi4yNWMwLTEuMiAxLTIuMjUgMi4yNS0yLjI1em0tNDcgMzhjMS4yNSAwIDIuMjUgMSAyLjI1IDIuMjVzLTEgMi4yNS0yLjI1IDIuMjUtMi4yNS0xLTIuMjUtMi4yNWMwLTEuMiAxLTIuMjUgMi4yNS0yLjI1eiIvPjxwYXRoIGZpbGw9IiMxNjE2MTYiIGQ9Ik0zNy42NSA0MC41NWwxLjI1Ljc1LTMuNyA0LjMtMS40LS42em01Mi0zMy41bDEuMjUuNzUtMy43IDQuMy0xLjQtLjZ6bS0uNSA4MWwxLjI1Ljc1LTMuNyA0LjMtMS40LS42em0tNTYuOS0xLjM1bDEuMjUtLjcgMS45NSA1LjMtMS4yLjk1em0zNC0xNC41bDEuMjUtLjc1IDEuOTUgNS4zLTEuMi45NXoiLz48cGF0aCBkPSJNODYuMjUgNjQuMmMxLjEgMCAyIC45IDIgMnMtLjkgMi0yIDItMi0uOS0yLTIgLjktMiAyLTJ6bS02Ny41LTQ3YzEuMSAwIDIgLjkgMiAycy0uOSAyLTIgMi0yLS45LTItMiAuOS0yIDItMnoiIHN0cm9rZT0iIzE2MTYxNiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9nPjwvc3ZnPg==);
+  background-size: 24rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.btn {
+  cursor: pointer;
+  font-family: 'Futura Medium';
+  font-size: 100%;
+  background: #1F1D1C;
+  color: whitesmoke;
+  margin: 0;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(208, 223, 232, .50);
+}
+
+.Header h1 {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none;
+  -o-user-select: none;
+  -moz-user-select: none;
+}
+
+.Header h1 .logo {
+  vertical-align: middle;
+}
+
+.Footer {
+  font-size: 90%;
+}
+
+.Landing p {
+  font-size: 150%;
+}
+
+.Riddle label {
+  font-size: 75%;
+  font-family: 'Futura Book';
+  text-transform: uppercase;
+  display: block;
+  margin: 0 auto 1.5rem;
+}
+
+.Riddle .content {
+  font-size: 150%;
+  margin: 0;
+  padding: 0;
+}
+
+.Riddle .content-container {
+  margin-bottom: 3rem;
+}
+
+.Riddle .content.answer {
+  font-style: italic; 
+}
+
+@media screen and (max-width: 700px) {
+  #root { height: calc(100% - 4rem); }
+
+  .wrapper {
+    padding: 2rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .container > .inner > .col.left {
+    padding: 4rem 5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #root { height: 100%; }
+
+  .wrapper {
+    padding: 0;
+  }
+
+  .container {
+    margin: 0;
+    height: 100%;
+  }
+
+  .container > .inner > .col.left {
+    padding: 2rem;
   }
 }
