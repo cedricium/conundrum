@@ -1,7 +1,20 @@
+<div align="center">
+
+  <a href="https://conundrum.now.sh/">
+    <img src="public/og-image.png" height="350" />
+  </a>
+
+  **A simple riddle game, built with React.**
+</div>
+
+Looking to kill some time? Why not see if you can answer all of these riddles
+correctly? We bet you can't.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Getting Started
 
+This section describes the scripts that will help you when developing.
 In the project directory, you can run:
 
 ### `npm start`
@@ -37,8 +50,29 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### Note:
+
+There is an additional script, `npm run now-build`. This isn't necessarily to be
+used by you, the developer. Rather, this script is used to deploy this application
+using Zeit's `now` CLI.
+
+For more information on deploying with `now`, check out the [deploying Create React App guide](https://github.com/zeit/now-examples/tree/master/create-react-app).
+
+### Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Contributing
+
+Contributions are welcome from anyone and everyone. To contribute:
+
+1. **Fork** the repo on GitHub
+2. **Clone** the project to your own machine
+3. **Commit** changes to your own branch
+4. **Push** your work back up to your fork
+5. Submit a **Pull request** so that we can review your changes
+
+## License
+[MIT](LICENSE.md)
