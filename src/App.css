@@ -84,6 +84,14 @@
   font-size: 90%;
 }
 
+.Footer a {
+  color: black;
+}
+
+.Footer a:visited {
+  color: #555 !important;
+}
+
 .Landing p {
   font-size: 150%;
 }
