@@ -11,7 +11,8 @@ class Riddle extends Component {
       riddle: {
         riddle: '',
         answer: ''
-      }
+      },
+      secsRemaining: 5
     }
   }
 
@@ -27,12 +28,28 @@ class Riddle extends Component {
     const randomRiddle = riddles[Math.floor(Math.random() * riddles.length)]
     this.setState({
       isAnswerDisplayed: false,
-      riddle: {...randomRiddle}
+      riddle: {...randomRiddle},
+      secsRemaining: 5
     })
+  }
+
+  countDown() {
+    let currentTimeRemaining = this.state.secsRemaining
+    this.countDownID = setInterval(() => {
+      if (currentTimeRemaining <= 1) {
+        clearInterval(this.countDownID)
+      } else {
+        currentTimeRemaining--;
+        this.setState({
+          secsRemaining: currentTimeRemaining
+        })
+      }
+    }, 1000);
   }
 
   handleRevealAnswerClick() {
     this.setState({isAnswerDisplayed: true})
+    this.countDown()
     this.timerID = setTimeout(
       () => this.fetchRiddle(),
       5000
@@ -50,15 +67,18 @@ class Riddle extends Component {
         </div>
         <label>Answer</label>
         <div className="content-container">
-          {
-            !this.state.isAnswerDisplayed
-            ? ( <button
-                  className="btn reveal-answer"
-                  onClick={this.handleRevealAnswerClick}>
-                  Reveal Answer <span role="img" aria-label="sparkles emoji">✨</span>
-                </button> )
-            : ( <p className="content answer">{ this.state.riddle.answer }</p> )
-          }
+          {!this.state.isAnswerDisplayed ? (
+            <button
+              className="btn reveal-answer"
+              onClick={this.handleRevealAnswerClick}>
+              Reveal Answer <span role="img" aria-label="sparkles emoji">✨</span>
+            </button>
+          ) : (
+            <div>
+              <p className="content answer">{ this.state.riddle.answer }</p>
+              <small>Next riddle in {this.state.secsRemaining}</small>
+            </div>
+          )}
         </div>
       </div>
     )
