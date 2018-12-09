@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "deploy": "now rm conundrum-api -y && now && now alias",
     "dev": "NODE_ENV=development nodemon -r now-env ./bin/www",
     "start": "NODE_ENV=production node ./bin/www"
   },

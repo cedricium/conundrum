@@ -1,6 +1,7 @@
 {
   "version": 1,
   "name": "conundrum-api",
+  "alias": "conundrum-api",
   "public": false,
   "env": {
     "PORT": "3001",
