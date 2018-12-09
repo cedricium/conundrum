@@ -1,0 +1,23 @@
+{
+  "name": "conundrum-api",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon -r now-env ./bin/www",
+    "start": "NODE_ENV=production node ./bin/www"
+  },
+  "dependencies": {
+    "atob": "^2.1.2",
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "dotenv": "^6.2.0",
+    "express": "~4.16.0",
+    "firebase-admin": "^6.3.0",
+    "morgan": "~1.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.7",
+    "now-env": "^3.1.0"
+  }
+}

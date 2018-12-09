@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "name": "conundrum-api",
+  "public": false,
+  "env": {
+    "PORT": "3001",
+    "TYPE": "@type",
+    "PROJECT_ID": "@project_id",
+    "PRIVATE_KEY_ID": "@private_key_id",
+    "PRIVATE_KEY": "@private_key",
+    "CLIENT_EMAIL": "@client_email",
+    "CLIENT_ID": "@client_id",
+    "AUTH_URI": "@auth_uri",
+    "TOKEN_URI": "@token_uri",
+    "AUTH_PROVIDER_X509_CERT_URL": "@auth_provider_x509_cert_url",
+    "CLIENT_X509_CERT_URL": "@client_x509_cert_url"
+  }
+}
