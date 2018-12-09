@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 
-import riddles from '../riddles.json'
-
 class Riddle extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.handleRevealAnswerClick = this.handleRevealAnswerClick.bind(this)
     this.state = {
       isAnswerDisplayed: false,
@@ -25,10 +23,11 @@ class Riddle extends Component {
   }
 
   fetchRiddle() {
-    const randomRiddle = riddles[Math.floor(Math.random() * riddles.length)]
+    const riddles = this.props.riddles
+    const r = riddles[Math.floor(Math.random() * riddles.length)].data
     this.setState({
       isAnswerDisplayed: false,
-      riddle: {...randomRiddle},
+      riddle: r,
       secsRemaining: 5
     })
   }

@@ -8,8 +8,29 @@ class Main extends Component {
     super()
     this.handleGameInitClick = this.handleGameInitClick.bind(this)
     this.state = {
-      isGameStarted: false
+      isGameStarted: false,
+      error: null,
+      riddles: []
     }
+  }
+
+  componentDidMount() {
+    const NODE_ENV = process.env.NODE_ENV || 'development'
+    const API_URL = (NODE_ENV === 'development')
+      ? 'http://localhost:3001/api/v1/riddles'
+      : 'https://conundrum-api.now.sh/api/v1/riddles'
+    fetch(API_URL)
+      .then(response => response.json())
+      .then(riddles => {
+        this.setState({
+          riddles
+        })
+      }, error => {
+        console.error(error)
+        this.setState({
+          error
+        })
+      })
   }
 
   handleGameInitClick() {
@@ -23,7 +44,7 @@ class Main extends Component {
       <main>
         {
           this.state.isGameStarted
-          ? ( <Riddle /> )
+          ? ( <Riddle riddles={this.state.riddles} /> )
           : ( <Landing handleGameInitClick={this.handleGameInitClick} /> )
         }
       </main>
