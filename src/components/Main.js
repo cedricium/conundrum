@@ -22,8 +22,14 @@ class Main extends Component {
     fetch(API_URL)
       .then(response => response.json())
       .then(riddles => {
+        // filter out long riddles so as to not break layout of page - fixes #2
+        const filteredRiddles = riddles.filter(r => {
+          const { riddle, answer } = r.data
+          const totalLength = riddle.length + answer.length
+          return (totalLength <= 200) ? riddle : false
+        })
         this.setState({
-          riddles
+          riddles: filteredRiddles
         })
       }, error => {
         console.error(error)
