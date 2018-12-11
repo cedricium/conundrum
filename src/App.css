@@ -108,6 +108,7 @@
   font-size: 150%;
   margin: 0;
   padding: 0;
+  white-space: pre-line;
 }
 
 .Riddle .content-container {
